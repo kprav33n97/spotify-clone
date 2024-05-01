@@ -169,3 +169,22 @@ body {
 ::-webkit-scrollbar-track {
     background: #111; /* Color of the scrollbar track */
 }
+
+.left-nav, .right-nav {
+    cursor: pointer;
+}
+
+.playbar {
+    position: absolute;
+    bottom: 15px;
+    background: green;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.right {
+    position: relative;
+}
