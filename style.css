@@ -4,8 +4,8 @@
 }
 
 body {
-    /* background-color: #000;
-    color: #fff; */
+    background-color: #000;
+    color: #fff;
 }
 
 .left {
@@ -17,6 +17,7 @@ body {
 .right {
     width: 75vw;
     border: 1px solid #fff;
+    padding: 20px;
 }
 
 .home ul li {
@@ -57,4 +58,87 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     gap: 6px;
+}
+
+.library {
+    min-height: 80vh;
+    position: relative;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.signup {
+    background-color: #fff;
+    color: #000;
+    border-radius: 18px;
+    font-size: inherit;
+    padding: 8px 32px;
+    border: none;
+}
+
+.login {
+    background-color: #121212;
+    color: #fff;
+    border-radius: 18px;
+    font-size: inherit;
+    padding: 8px 32px;
+    border: none;
+}
+
+.card {
+    width: 250px;
+    border: 1px solid #ffffff73;
+    border-radius: 15px;
+    padding: 10px;
+    background: #121212;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card > * {
+    padding-top: 10px;
+}
+
+.cardContainer {
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.play {
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+    padding: 10px;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.card:hover .play {
+    opacity: 1;
+    bottom: 120px;
 }
