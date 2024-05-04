@@ -226,3 +226,22 @@ body {
     height: 35vh;
     overflow: auto;
 }
+
+.seekbar {
+    height: 2px;
+    width: calc(100% - 10px);
+    border: 1px solid #fff;
+    position: absolute;
+    bottom: 8px;
+}
+
+.seekbar .circle {
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 100%;
+    position: relative;
+    top: -7px;
+    left: 0%;
+    transition: left 0.5s;
+}
