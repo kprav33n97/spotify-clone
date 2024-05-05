@@ -184,9 +184,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 60vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .right {
@@ -244,4 +241,20 @@ body {
     top: -7px;
     left: 0%;
     transition: left 0.5s;
+}
+
+.songInfo, .songTime {
+    color: #fff;
+}
+
+.abovebar {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.songInfo .songTime {
+    color: #fff;
 }
