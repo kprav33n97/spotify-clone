@@ -230,6 +230,7 @@ body {
     border: 1px solid #fff;
     position: absolute;
     bottom: 8px;
+    cursor: pointer;
 }
 
 .seekbar .circle {

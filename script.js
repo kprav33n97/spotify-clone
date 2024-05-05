@@ -31,18 +31,23 @@ async function getSongs() {
     return songs
 }
 
-const playMusic = (track) => {
+const playMusic = (track, pause="false") => {
 //   let audio = new Audio("/songs/" + track)
   currentSong.src = "/songs/" + track
+if(!pause) {
+    currentSong.play();
+}
+play.src = "pause.svg"
   currentSong.play()
-  play.src = "pause.svg"
-  document.querySelector(".songInfo").innerHTML = "track";
+  document.querySelector(".songInfo").innerHTML = decodeURI(track);
   document.querySelector(".songTime").innerHTML = "00:00 / 00:00";
 }
 
 async function main() {
     let songs = await getSongs();
-    console.log(songs);
+    // currentSong.src = songs[0]
+    // console.log(songs);
+    playMusic(songs[0], true)
 
     let songUl = document.querySelector(".songList").getElementsByTagName("ul")[0]
     for (const song of songs) {
@@ -87,8 +92,16 @@ async function main() {
     currentSong.addEventListener("timeupdate", () => {
         console.log(currentSong.currentTime, currentSong.duration);
         document.querySelector(".songTime").innerHTML = `
-        ${convertSecondsToMinutesSeconds(currentSong.currentTime)}/${convertSecondsToMinutesSeconds(currentSong.duration)}'
+        ${convertSecondsToMinutesSeconds(currentSong.currentTime)}/${convertSecondsToMinutesSeconds(currentSong.duration)}
         `
+        document.querySelector(".circle").style.left = (currentSong.currentTime/ currentSong.duration) * 100 + "%";
+    })
+
+    // Add an event listener to seekbar 
+    document.querySelector(".seekbar").addEventListener("click", e => {
+        let percent = (e.offsetX/e.target.getBoundingClientRect().width) * 100;
+        document.querySelector(".circle").style.left = percent + "%";
+        currentSong.currentTime = ((currentSong.duration) * percent )/100
     })
 }
 
